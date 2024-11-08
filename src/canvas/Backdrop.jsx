@@ -8,9 +8,9 @@ const Backdrop = () => {
   return (
     <AccumulativeShadows
       ref={shadows}
-      temporal={true} // smooth out the edges of the shadows over time
+      temporal={true} 
       frames={60}
-      alphaTest={0.5} // Transparency of the shadows
+      alphaTest={0.5} 
       scale={10}
       rotation={[Math.PI / 2, 0, 0]}
       position={[0, 0, -0.14]}

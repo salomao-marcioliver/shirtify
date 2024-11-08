@@ -25,7 +25,6 @@ const Customizer = () => {
 
   const editorTabRef = useRef(null);
 
-  // Closes the tab if clicked out
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (editorTabRef.current && !editorTabRef.current.contains(event.target)) {
@@ -39,7 +38,6 @@ const Customizer = () => {
     };
   }, []);
 
-  // show tab content depending on the activeTab, or close it if clicked again
   const generateTabContent = () => {
     switch (activeEditorTab) {
       case "colorpicker":
@@ -51,9 +49,8 @@ const Customizer = () => {
     }
   };
 
-  // Handles click on tab: opens tab or closes it if clicked again
   const handleTabClick = (tabName) => {
-    setActiveEditorTab((prevTab) => (prevTab === tabName ? "" : tabName)); // Toggle tab
+    setActiveEditorTab((prevTab) => (prevTab === tabName ? "" : tabName));
   };
 
   const handleDecals = (type, result) => {
@@ -96,7 +93,6 @@ const Customizer = () => {
     <AnimatePresence>
       {!snap.intro && (
         <>
-          {/* left menu tabs */}
           <motion.div
             key="custom"
             className="absolute top-0 left-0 z-10"
@@ -117,7 +113,6 @@ const Customizer = () => {
             </div>
           </motion.div>
 
-          {/* Go back button */}
           <motion.div
             className="absolute z-10 top-5 right-5"
             {...fadeAnimation}
@@ -130,7 +125,6 @@ const Customizer = () => {
             />
           </motion.div>
 
-          {/* filter tabs */}
           <motion.div className="filtertabs-container" {...slideAnimation("up")}>
             {FilterTabs.map((tab) => (
               <Tab

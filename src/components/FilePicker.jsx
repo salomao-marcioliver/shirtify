@@ -3,11 +3,6 @@ import PropTypes from "prop-types";
 
 import CustomButton from "./CustomButton";
 
-/**
- * The `FilePicker` component is a React component that allows users to upload a file and provides
- * buttons to read different parts of the file.
- * @returns The FilePicker component is returning JSX elements.
- */
 const FilePicker = ({ file, setFile, readFile }) => {
   return (
     <div className="filepicker-container">
@@ -16,8 +11,6 @@ const FilePicker = ({ file, setFile, readFile }) => {
           id="file-upload"
           type="file"
           accept="image/*"
-          /* The `onChange` event handler in the `input` element is responsible for updating the `file` state
-            when a file is selected by the user. */
           onChange={(e) => setFile(e.target.files[0])}
         />
         <label htmlFor="file-upload" className="filepicker-label">
@@ -25,7 +18,7 @@ const FilePicker = ({ file, setFile, readFile }) => {
         </label>
 
         <p className="mt-2 text-gray-500 text-xs truncate">
-          {file === "" ? "No file selected" : file.name}
+          {file === "" ? "Nenhum arquivo selecionado" : file.name}
         </p>
       </div>
 

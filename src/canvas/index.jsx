@@ -23,12 +23,11 @@ const CanvasModel = () => {
   return (
     <Canvas
       shadows
-      camera={{ position: [0, 0, 5], fov: 25 }} // fov = field of view
+      camera={{ position: [0, 0, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
       className="w-full max-w-full h-full transition-all ease-in"
     >
       <ambientLight intensity={1} />
-      {/* <Environment preset="forest" background /> */}
       <directionalLight
         position={[5, 5, 5]}
         intensity={1}
